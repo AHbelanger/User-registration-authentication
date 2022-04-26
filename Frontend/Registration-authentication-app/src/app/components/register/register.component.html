@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="mt-5 border p-4 bg-light shadow">
+                <h4 class="mb-5 text-secondary">Create Your Account</h4>
+                <div class="row">
+                    <div class="mb-3 col-md-12">
+                        <label>Email<span class="text-danger">*</span></label>
+                        <input type="email" formControlName="email" class="form-control" placeholder="Enter Email" required>
+                    </div>
+
+                    <div class="mb-3 col-md-12">
+                        <label>Password (at least 1 uppercase and lowercase letter, 1 number, 8 chars)<span class="text-danger">*</span></label>
+                        <div class="d-flex flex-row">
+                        <input [type]="showPassword?'text':'password'" formControlName="password" class="form-control" placeholder="Enter Password">
+                        <button type="button" class="btn button-eyeslash" (click)="showPassword=!showPassword" >
+                            <fa-icon [icon]="showPassword?eyeIcon:eyeslashIcon"></fa-icon>
+                        </button>
+                        </div>     
+                    </div>
+
+                    <div class="mb-3 col-md-12">
+                        <label>Confirm Password<span class="text-danger">*</span></label>
+                        <div class="d-flex flex-row">
+                            <input [type]="showConfirmPassword?'text':'password'" formControlName="confirmPassword" class="form-control" placeholder="Confirm Password">
+                            <button type="button" class="btn button-eyeslash" (click)="showConfirmPassword=!showConfirmPassword" >
+                                <fa-icon [icon]="showConfirmPassword?eyeIcon:eyeslashIcon"></fa-icon>
+                            </button>
+                            </div>     
+                    </div>
+
+                    <div class="col-md-12">
+                       <button type="submit" class="btn btn-primary float-end" [disabled]="!registrationForm.valid">Create account</button>
+                    </div>
+                </div>
+            </form>
+            <p class="text-center mt-3 text-secondary">If you have an account, Please <a routerLink="/login" routerLinkActive="active">Login Now</a></p>
+        </div>
+    </div>
+</div>

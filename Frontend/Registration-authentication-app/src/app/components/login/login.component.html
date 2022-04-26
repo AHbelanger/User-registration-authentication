@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="mt-5 border p-4 bg-light shadow">
+                <h4 class="mb-5 text-secondary">Sign In Now</h4>
+                <div class="row">
+                    <div class="mb-3 col-md-12">
+                        <label>Email<span class="text-danger">*</span></label>
+                        <input type="email" formControlName="email" class="form-control" placeholder="Enter Email" required>
+                    </div>
+
+                    <div class="mb-3 col-md-12">
+                        <label>Password (at least 1 uppercase and lowercase letter, 1 number, 8 chars)<span class="text-danger">*</span></label>
+                        <input type="password" formControlName="password" class="form-control" placeholder="Enter Password">
+                    </div>
+
+                    <div class="col-md-12">
+                       <button type="submit" class="btn btn-primary float-end" [disabled]="!loginForm.valid">Log in</button>
+                    </div>
+                </div>
+            </form>
+            <p class="text-center mt-3 text-secondary">If you don't have an account, Please <a routerLink="/register" routerLinkActive="active">Register Now</a></p>
+        </div>
+    </div>
+</div>

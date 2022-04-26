@@ -1,0 +1,15 @@
+.list-group{
+    margin: 60px;
+}
+
+.list-group-item{
+    padding: 10px;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.wrapper button {
+    margin: 20px;
+}
